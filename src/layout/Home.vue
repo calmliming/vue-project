@@ -6,8 +6,13 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import { login } from "../api/lmApi";
+const formData = reactive({
+  userName: "admin",
+  password: "123456",
+  loginType: "bmyypt",
+});
 const pcLogin = () => {
-  login()
+  login(formData)
     .then((res: any) => {
       console.log(res);
     })
