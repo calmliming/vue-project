@@ -36,10 +36,10 @@ service.interceptors.response.use(
       // 对接接口出错
       return Promise.reject(new Error(response.statusText || "Error"));
     }
-
     const res = response.data;
+    console.log(res)
     // 响应成功，这里设置了0为响应成功的返回值，可根据实际后端返回的修改
-    if (res.code === 0) {
+    if (res.code === 200) {
       return res;
     }
 

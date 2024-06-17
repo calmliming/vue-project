@@ -17,8 +17,8 @@ export default defineConfig({
     proxy: {
       // 将请求代理到另一个服务器
       "/api": {
-        // target: "http://localhost:3001", //这是你要跨域请求的地址前缀
-        target: "http://dev.hyrc.talent.com", //这是你要跨域请求的地址前缀
+        target: "http://localhost:3001", //这是你要跨域请求的地址前缀
+        // target: "http://dev.hyrc.talent.com", //这是你要跨域请求的地址前缀
         changeOrigin: true, //开启跨域
         rewrite: (path) => path.replace(new RegExp(`^/api`), ""), //去除前缀api
       },

@@ -1,20 +1,23 @@
 <template>
   <div>Home</div>
+  <div>点击登录按钮获取的数据：{{ text }}</div>
   <button @click="pcLogin">登录</button>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { login } from "../api/lmApi";
 const formData = reactive({
-  userName: "admin",
-  password: "123456",
-  loginType: "bmyypt",
+  // userName: "admin",
+  // password: "123456",
+  // loginType: "bmyypt",
 });
+const text = ref("111");
 const pcLogin = () => {
-  login(formData)
+  login()
     .then((res: any) => {
-      console.log(res);
+      text.value = res.content;
+      console.log(res.content, "res");
     })
     .catch((err: any) => {
       console.log(err);
