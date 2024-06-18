@@ -16,8 +16,8 @@ const text = ref("111");
 const pcLogin = () => {
   login()
     .then((res: any) => {
-      text.value = res.content;
-      console.log(res.content, "res");
+      text.value = res.data;
+      console.log(res.data, "res");
     })
     .catch((err: any) => {
       console.log(err);
